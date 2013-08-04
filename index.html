@@ -16,11 +16,17 @@
     <!-- http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/ 
 	 outlines reasons to prefer a content delivery network (CDN) to load static
 	 content over hosting on own servers -->
+    <!-- <link href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css" rel="stylesheet" type="text/css">
+    <!-- Buttons don't appear in colour when I use local version -->
+    <!-- <link href="css/social-buttons.css" rel="stylesheet" type="text/css"> -->
 
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
 
     <!-- Font pairing from google. -->
     <!-- Google warns that loading unused fonts will slow down page loading 
@@ -94,22 +100,28 @@
       }
 
 
+      /* Marketing and copy */
+      .copy {
+      padding-top: 2.5%;
+      padding-bottom: 2.5%;
+      text-align: justify;
+      }
+      .asset {
+      /* padding-top: 2.5% 0%; */
+      padding-top: 2.5%;
+      }
 
-      .container {
-      width: 960px;
+      .footer {
+      color: #cccccc;
+      text-align: center;
       }
-      .navigation, .pitch, .section1, .section2, .faq, .footer {
-        padding: 10px 0px 10px 0px;
+      .footer p {
+      font-size: 11px;
+      }
+      .footer a {
+      color: #ccccff;
       }
 
-      .thermometer, .order, .social {
-        /* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html */
-        height: 40px;
-        line-height: 40px;
-      }
-      div.row {
-        border: 1px solid;
-      }
     </style>
   </head>
 
@@ -164,7 +176,7 @@
 	
 	<!-- Indent the video by 1 column and have it span 5 columns -->
         <div class="span5 offset1 video">
-          <img class="img-poloroid" src="http://placehold.it/480x300">
+          <img class="img-polaroid" src="http://placehold.it/480x300">
         </div>
 
 	<div class="span5 actions">
@@ -190,36 +202,98 @@
 	      </div>
 	    </div>
 	  </div>
-	  <div class="span10 offset1">
+	  
+	  <div class="span10 offset1 therm">
 	    <div class="thermometer progress active">
-	      Sopme textewn
+	      <div class="bar bar-success" style="width: 60%;"></div>
+	      <div class="bar bar-warning" style="width: 40%;"></div>
 	    </div>
 	  </div>
+	  
+	  <div class="span6 offset3 order">
+	    <button class="btn btn-success btn-large">Preorder</button>
+	  </div>
+	  
+	  <!-- TODO these icons don't appear in colour... fix this-->
+	  <div class="span8 offset2 social">
+	    <button class="btn btn-twitter">
+	      <i class="icon-twitter"></i> | Twitter
+	    </button>
+	    <button class="btn btn-facebook">
+	      <i class="icon-facebook"></i> | Facebook
+	    </button>	
+	  </div>
 	</div>
-
       </div>
 
-      <div class="row section1">
+      <!-- Marketing copy -->
+      <div class="row-fluid section1">
+	<div class="span5 offset1 asset">
+	  <img class="img-polaroid" src="http://placehold.it/480x300">
+	</div>
+	<div class="span5 copy">
+	  <p>Some copy</p>
+	</div>
+      </div>
+
+      <div class="row-fluid section2">
+	<div class="span5 offset1 copy copy-right">
+	  <p>Some more copy</p>
+	</div>
+	<div class="span5 asset">
+	  <img class="img-polaroid" src="http://placehold.it/480x300">
+	</div>
+      </div>
+
+
+      <!-- FAQ -->
+      <!-- TODO not working in collapse mode. Using expanded version for now -->
+      <div class="row-fluid faq">
+        <div class="span10 offset1">
+          <h3>FAQ</h3>
+	  <div class="accordion" id="accordion2">
+	    <div class="accordion-group">
+	      <div class="accordion-heading">
+		<a class="accordion-toggle" data-toggle="collapse"
+		   data-parent="#accordion2" href="#collapseOne">
+		  What does FAQ stand for?
+		</a>
+	      </div>
+	      <div id="collapseOne" class="accordion-body collapse in">
+		<div class="accordion-inner">
+		  Frequently asked question.
+		</div>
+	      </div>
+	    </div>
+	    <div class="accordion-group">
+	      <div class="accordion-heading">
+		<a class="accordion-toggle" data-toggle="collapse"
+		   data-parent="#accordion2" href="#collapseTwo">
+		  What's the most frequently asked question?
+		</a>
+	      </div>
+	      <div id="collapseTwo" class="accordion-body collapse">
+		<div class="accordion-inner">
+		  What does FAQ stand for.
+		</div>
+	      </div>
+	    </div>
+          </div>
+	</div>
+      </div>
+
+      <div class="row-fluid footer">
         <div class="span12">
-          Marketing Section 1
+          <p>This work is licensed under
+            the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC
+              By-SA 3.0
+            </a>, without all the cruft that would otherwise be
+            put at the bottom of the page.</p>
         </div>
       </div>
-      <div class="row section2">
-        <div class="span12">
-          Marketing Section 2
-        </div>
-      </div>
-      <div class="row faq">
-        <div class="span12">
-          FAQ
-        </div>
-      </div>
-      <div class="row footer">
-        <div class="span12">
-          Footer
-        </div>
-      </div>
+
     </div>
 
   </body>
+
 </html>
